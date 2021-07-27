@@ -13,9 +13,11 @@ RoxygenNote: 7.1.1
 Imports: 
     dplyr,
     glue,
+    lubridate,
     magrittr,
     purrr,
     rlang,
+    stringr,
     tidyr,
     xts,
     zoo

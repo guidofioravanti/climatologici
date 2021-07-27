@@ -7,7 +7,7 @@
 #'
 checkParam<-function(x){
 
-  stringhePioggia<-c("pr","prcp","prpc")
+  stringhePioggia<-c("pr","prcp","prpc","prec")
   stringheTemperatura<-c("tasmax","tasmin","tmax","tmin","tmean")
 
   stringhePossibili<-c(stringhePioggia,stringheTemperatura)
@@ -42,9 +42,9 @@ checkParam<-function(x){
 #' Altre colonne opzionali sono: mm (o month) se si tratta di serie di dati mensili; dd (o day) se si tratta di serie di dati giornalieri.
 #'
 #' @param x Un dataframe o un oggetto xts da passare a ClimateData.
-#' @param param Una stringa di testo per specificare se si tratta di dati di temperatura o precipitazione.
+#' @param param Una stringa di testo (ammesse minuscole e maiuscole) per specificare se si tratta di dati di temperatura o precipitazione.
 #'              Per definire serie di dati di temperatura sono ammesse le seguenti stringhe: "tas","tasmax","tasmin", "tmax","tmin","tmean".
-#'              Per definire serie di dati di precipitazione sono ammesse le seguenti stringhe: "pr","prpc","prcp".
+#'              Per definire serie di dati di precipitazione sono ammesse le seguenti stringhe: "pr","prpc","prcp", "prec".
 #'
 #' @return Un oggetto di tipo ClimateData.
 #' @export

@@ -15,9 +15,9 @@ ClimateData(x, param)
 \arguments{
 \item{x}{Un dataframe o un oggetto xts da passare a ClimateData.}
 
-\item{param}{Una stringa di testo per specificare se si tratta di dati di temperatura o precipitazione.
+\item{param}{Una stringa di testo (ammesse minuscole e maiuscole) per specificare se si tratta di dati di temperatura o precipitazione.
 Per definire serie di dati di temperatura sono ammesse le seguenti stringhe: "tas","tasmax","tasmin", "tmax","tmin","tmean".
-Per definire serie di dati di precipitazione sono ammesse le seguenti stringhe: "pr","prpc","prcp".}
+Per definire serie di dati di precipitazione sono ammesse le seguenti stringhe: "pr","prpc","prcp", "prec".}
 }
 \value{
 Un oggetto di tipo ClimateData.

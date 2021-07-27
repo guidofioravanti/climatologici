@@ -51,6 +51,7 @@ checkParam<-function(x){
 ClimateData<-function(x,param)  UseMethod("ClimateData",x)
 
 #' @describeIn ClimateData Crea un oggetto ClimateData a partire da un data.frame.
+#' @export
 ClimateData.data.frame<-function(x,param=NULL)
 {
 
@@ -106,6 +107,7 @@ ClimateData.data.frame<-function(x,param=NULL)
 
 
 #' @describeIn ClimateData Crea un oggetto ClimateData partendo da un oggetto xts.
+#' @export
 ClimateData.xts<-function(x,param=NULL)
 {
 
@@ -160,15 +162,14 @@ is.ClimateData<-function(x)
 #'
 #' @param x Un oggetto ClimateData.
 #' @param ... Uno o piu' parametri per la funzione as.data.frame.
+#'
 #' @return Un dataframe.
+#' @describeIn as.data.frame Crea un dataframe da un oggetto ClimateData.
 #' @export
 #'
 #' @importFrom rlang .data
-
-as.data.frame<-function(x,...) UseMethod("as.data.frame",x)
-
-#' @describeIn as.data.frame Crea un dataframe da un oggetto ClimateData.
-as.data.frame.ClimateData<-function(x)
+#'
+as.data.frame.ClimateData<-function(x,...)
 {
   as.data.frame(zoo::coredata(x),optional=TRUE)->y
   xts::periodicity(x)$scale->periodicita

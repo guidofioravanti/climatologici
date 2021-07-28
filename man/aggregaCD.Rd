@@ -10,13 +10,13 @@
 \usage{
 aggregaCD(x, max.na, rle.check, max.size.block.na, ...)
 
-\method{aggregaCD}{default}(x)
+\method{aggregaCD}{default}(x, max.na, rle.check, max.size.block.na, ...)
 
-\method{aggregaCD}{daily}(x, max.na, rle.check, max.size.block.na)
+\method{aggregaCD}{daily}(x, max.na, rle.check, max.size.block.na, ...)
 
-\method{aggregaCD}{monthly}(x, max.na, rle.check, max.size.block.na, ignore.par, seasonal)
+\method{aggregaCD}{monthly}(x, max.na, rle.check, max.size.block.na, ignore.par, seasonal, ...)
 
-\method{aggregaCD}{yearly}(x, max.na, rle.check, max.size.block.na, ignore.par, seasonal)
+\method{aggregaCD}{yearly}(x, max.na, rle.check, max.size.block.na, ignore.par, seasonal, ...)
 }
 \arguments{
 \item{x}{Un oggetto ClimateData.}

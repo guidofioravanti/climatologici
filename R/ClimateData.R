@@ -18,12 +18,16 @@ checkParam<-function(x){
   tolower(x)->x
   if(!(x %in%  stringhePossibili)) stop(glue::glue("La stringa {x} non e' corretta"))
 
-  if((x=="prpc") || (x=="prcp")){
+  if(x %in% stringhePioggia){
     x<-"pr"
-  }else if(x=="tasmax"){
+  }else if(grepl("^t.*max",x)){
     x<-"tmax"
-  } else if(x=="tasmin"){
+  }else if(grepl("^t.*min",x)){
     x<-"tmin"
+  }else if(x=="tmean"){
+    x<-"tmean"
+  }else{
+    stop("Qui non dovrei arrivarci!")
   }
 
   return(x)

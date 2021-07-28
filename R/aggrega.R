@@ -59,7 +59,7 @@ aggregaCD<-function(x,max.na,rle.check,max.size.block.na,...)
 
 #' @describeIn aggregaCD Funzione di default
 #' @export
-aggregaCD.default<-function(x) { stop(glue::glue("Non so aggregare un oggetto di classe {class(x)}"))}
+aggregaCD.default<-function(x,max.na,rle.check,max.size.block.na,...) { stop(glue::glue("Non so aggregare un oggetto di classe {class(x)}"))}
 
 #' aggrega
 #'
@@ -132,7 +132,7 @@ aggrega<-function(x,aggFun,max.na,rle.check,max.size.block.na,seasonalCheck){
 #' @describeIn aggregaCD Aggrega un ClimateData con serie giornaliere
 #'
 #' @export
-aggregaCD.daily<-function(x,max.na,rle.check,max.size.block.na)
+aggregaCD.daily<-function(x,max.na,rle.check,max.size.block.na,...)
 {
 
   #determina se si tratta di temperatura o precipitazione
@@ -178,7 +178,7 @@ aggregaCD.daily<-function(x,max.na,rle.check,max.size.block.na)
 #'
 #' @export
 #'
-aggregaCD.monthly<-function(x,max.na,rle.check,max.size.block.na,ignore.par,seasonal)
+aggregaCD.monthly<-function(x,max.na,rle.check,max.size.block.na,ignore.par,seasonal,...)
 {
 
   if(missing(ignore.par) || missing(max.na) || missing(rle.check) || missing(max.size.block.na) || missing(seasonal)) stop("Uno o piu' parametri mancanti")
@@ -222,7 +222,7 @@ aggregaCD.monthly<-function(x,max.na,rle.check,max.size.block.na,ignore.par,seas
 #'
 #' @export
 #'
-aggregaCD.yearly<-function(x,max.na,rle.check,max.size.block.na,ignore.par,seasonal){
+aggregaCD.yearly<-function(x,max.na,rle.check,max.size.block.na,ignore.par,seasonal,...){
 
   if(missing(ignore.par) || missing(max.na) || missing(rle.check) || missing(max.size.block.na) || missing(seasonal)) stop("Uno o piu' parametri mancanti")
 
